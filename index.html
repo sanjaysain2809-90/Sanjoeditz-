@@ -1,4 +1,77 @@
-<!DOCTYPE html>
+.hero{
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:70px 6%;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      #ff5a3d 0%,
+      #d7193f 22%,
+      #5c101d 48%,
+      #120b0d 100%
+    );
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:#ff6b35;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:.18;
+  right:5%;
+  top:15%;
+  animation:glowMove 6s ease-in-out infinite alternate;
+}
+
+.hero-content{
+  width:100%;
+  max-width:1150px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  position:relative;
+  z-index:2;
+}
+
+.hero-text{
+  flex:1;
+  max-width:650px;
+}
+
+.hero-image{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  animation:
+    characterIn 1.1s ease .3s both,
+    characterFloat 5s ease-in-out 1.4s infinite;
+}
+
+.hero-image img{
+  width:min(430px,100%);
+  max-height:520px;
+  object-fit:contain;
+
+  filter:
+    drop-shadow(0 20px 35px rgba(0,0,0,.35));
+
+  transition:.4s ease;
+}
+
+.hero-image img:hover{
+  transform:scale(1.03);
+}<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -74,4 +147,948 @@ footer{text-align:center;padding:30px;color:#777;border-top:1px solid #222;font-
 
 <footer>© 2026 Sanjo Editz • Edit • Improve • Entertain • Repeat.</footer>
 </body>
-</html>
+</html>@keyframes characterIn{
+  from{
+    opacity:0;
+    transform:translateX(60px) scale(.92);
+  }
+
+  to{
+    opacity:1;
+    transform:translateX(0) scale(1);
+  }
+}
+
+@keyframes characterFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+@keyframes glowMove{
+  from{
+    transform:translate(0,-10px);
+  }
+
+  to{
+    transform:translate(-20px,30px);
+  }
+}@media(max-width:700px){
+
+  .hero{
+    min-height:auto;
+    padding:65px 5% 50px;
+  }
+
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text{
+    max-width:100%;
+  }
+
+  .hero-image{
+    order:2;
+    margin-top:15px;
+  }
+
+  .hero-image img{
+    width:75%;
+    max-height:380px;
+  }
+
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sanjo Editz | Edit • Improve • Entertain</title>
+
+<meta name="description"
+content="Sanjo Editz — edits, editing hacks, self-improvement, entertainment and fitness.">
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff8f5;
+  color:#181818;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+
+/* NAVBAR */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:rgba(255,250,248,.92);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid #f0d9d2;
+
+  padding:15px 6%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  animation:navDrop .7s ease;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#e83232;
+}
+
+nav a{
+  margin-left:18px;
+  color:#555;
+  font-size:14px;
+  transition:.3s ease;
+}
+
+nav a:hover{
+  color:#e83232;
+}
+
+
+/* HERO */
+
+.hero{
+  min-height:78vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:70px 6%;
+
+  position:relative;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      #ff8b5c 0%,
+      #f34d43 18%,
+      #e83442 34%,
+      #fff0e9 70%
+    );
+}
+
+.hero::before{
+  content:"";
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  background:#ff713d;
+
+  border-radius:50%;
+
+  filter:blur(130px);
+
+  opacity:.15;
+
+  right:3%;
+  top:10%;
+
+  animation:glowMove 6s ease-in-out infinite alternate;
+}
+
+.hero-content{
+  width:100%;
+  max-width:1150px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:45px;
+
+  position:relative;
+  z-index:2;
+}
+
+.hero-text{
+  flex:1;
+  max-width:650px;
+}
+
+.welcome{
+  color:#d92536;
+
+  font-weight:800;
+
+  letter-spacing:3px;
+
+  opacity:0;
+
+  animation:fadeUp .8s ease .2s forwards;
+}
+
+.hero h1{
+  font-size:clamp(45px,8vw,82px);
+
+  line-height:1;
+
+  font-weight:900;
+
+  margin-top:8px;
+
+  opacity:0;
+
+  animation:heroTitle 1s ease .35s forwards;
+}
+
+.hero h1 span{
+  color:#df283b;
+}
+
+.hero-description{
+  max-width:650px;
+
+  margin:22px 0;
+
+  color:#4f4f4f;
+
+  font-size:18px;
+
+  opacity:0;
+
+  animation:fadeUp .8s ease .6s forwards;
+}
+
+
+/* IMAGE */
+
+.hero-image{
+  flex:1;
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  opacity:0;
+
+  animation:characterIn 1s ease .4s forwards;
+}
+
+.hero-image img{
+  width:min(440px,100%);
+
+  max-height:540px;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(0 25px 30px rgba(100,30,20,.22));
+
+  animation:characterFloat 5s ease-in-out 1.3s infinite;
+
+  transition:.4s ease;
+}
+
+.hero-image img:hover{
+  transform:scale(1.03);
+}
+
+
+/* BUTTONS */
+
+.btn{
+  display:inline-block;
+
+  background:#e83242;
+
+  color:white;
+
+  padding:13px 24px;
+
+  border-radius:30px;
+
+  font-weight:800;
+
+  margin:8px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.btn:hover{
+  transform:translateY(-5px) scale(1.03);
+
+  box-shadow:
+    0 12px 28px rgba(220,40,60,.3);
+}
+
+.btn.alt{
+  background:white;
+
+  color:#333;
+
+  border:1px solid #e5c8c1;
+}
+
+.btn.alt:hover{
+  border-color:#e83242;
+
+  color:#e83242;
+}
+
+
+/* SECTIONS */
+
+section{
+  padding:70px 6%;
+
+  max-width:1100px;
+
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+
+  margin-bottom:35px;
+}
+
+.title h2{
+  font-size:34px;
+}
+
+.title p{
+  color:#888;
+}
+
+
+/* CARDS */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(210px,1fr));
+
+  gap:18px;
+}
+
+.card{
+  background:#fff;
+
+  border:1px solid #f0ded8;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+
+  opacity:0;
+
+  transform:translateY(35px);
+}
+
+.card.show{
+  opacity:1;
+
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+
+  border-color:#e83242;
+
+  box-shadow:
+    0 15px 35px rgba(150,50,40,.12);
+}
+
+.icon{
+  font-size:35px;
+
+  margin-bottom:10px;
+
+  transition:.35s ease;
+}
+
+.card:hover .icon{
+  transform:scale(1.15);
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#777;
+
+  font-size:14px;
+}
+
+
+/* ABOUT */
+
+.cta{
+  background:
+    linear-gradient(
+      135deg,
+      #ffe2d7,
+      #ffd0cf
+    );
+
+  border:1px solid #f0bdb7;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  padding:45px 20px;
+}
+
+.cta p{
+  color:#666;
+}
+
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+
+  padding:30px;
+
+  color:#888;
+
+  border-top:1px solid #eadbd7;
+
+  font-size:13px;
+
+  background:#fff;
+}
+
+
+/* SCROLL REVEAL */
+
+.reveal{
+  opacity:0;
+
+  transform:translateY(45px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+
+  transform:translateY(0);
+}
+
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@keyframes heroTitle{
+
+  from{
+    opacity:0;
+    transform:translateY(35px) scale(.96);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+
+}
+
+@keyframes characterIn{
+
+  from{
+    opacity:0;
+    transform:translateX(70px) scale(.9);
+  }
+
+  to{
+    opacity:1;
+    transform:translateX(0) scale(1);
+  }
+
+}
+
+@keyframes characterFloat{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+}
+
+@keyframes glowMove{
+
+  from{
+    transform:translate(0,-10px);
+  }
+
+  to{
+    transform:translate(-20px,30px);
+  }
+
+}
+
+@keyframes navDrop{
+
+  from{
+    opacity:0;
+    transform:translateY(-20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  nav a{
+    display:none;
+  }
+
+  .hero{
+    min-height:auto;
+
+    padding:60px 5% 45px;
+  }
+
+  .hero-content{
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:15px;
+  }
+
+  .hero-text{
+    max-width:100%;
+  }
+
+  .hero-description{
+    font-size:16px;
+  }
+
+  .hero-image{
+    order:2;
+
+    width:100%;
+
+    margin-top:5px;
+  }
+
+  .hero-image img{
+    width:78%;
+
+    max-height:400px;
+  }
+
+  section{
+    padding:55px 5%;
+  }
+
+}
+
+
+/* LESS MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+  <div class="logo">
+    SANJO <span>EDITZ</span>
+  </div>
+
+  <div>
+    <a href="#content">Content</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-text">
+
+      <p class="welcome">
+        WELCOME TO
+      </p>
+
+      <h1>
+        SANJO <span>EDITZ</span>
+      </h1>
+
+      <p class="hero-description">
+        Edit. Improve. Entertain. Repeat.
+        <br>
+        Edits, editing hacks, self-improvement,
+        entertainment & fitness — all in one place.
+      </p>
+
+      <a
+        class="btn"
+        href="https://youtube.com/@sanjoeditz001"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ▶ WATCH ON YOUTUBE
+      </a>
+
+      <a
+        class="btn alt"
+        href="#content"
+      >
+        EXPLORE
+      </a>
+
+    </div>
+
+
+    <!-- FRONT-FACING YOUR PHOTO -->
+
+    <div class="hero-image">
+
+      <img
+        src="sanjo-hero.png"
+        alt="Sanjo Editz creator"
+      >
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- CONTENT -->
+
+<section id="content">
+
+  <div class="title reveal">
+
+    <h2>What You'll Find</h2>
+
+    <p>Choose your vibe.</p>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <div class="card reveal">
+
+      <div class="icon">🎬</div>
+
+      <h3>Edits</h3>
+
+      <p>
+        Cinematic edits, shorts and creative
+        video content.
+      </p>
+
+    </div>
+
+
+    <div class="card reveal">
+
+      <div class="icon">⚡</div>
+
+      <h3>Editing Hacks</h3>
+
+      <p>
+        Quick tips, tricks and ideas to make
+        your edits better.
+      </p>
+
+    </div>
+
+
+    <div class="card reveal">
+
+      <div class="icon">🧠</div>
+
+      <h3>Self-Improvement</h3>
+
+      <p>
+        Simple ideas for discipline,
+        confidence and growth.
+      </p>
+
+    </div>
+
+
+    <div class="card reveal">
+
+      <div class="icon">😂</div>
+
+      <h3>Entertainment</h3>
+
+      <p>
+        Fun content made to keep you
+        watching and smiling.
+      </p>
+
+    </div>
+
+
+    <div class="card reveal">
+
+      <div class="icon">💪</div>
+
+      <h3>Fitness</h3>
+
+      <p>
+        Motivation, habits and fitness-focused
+        content.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="cta reveal">
+
+    <h2>About Sanjo Editz</h2>
+
+    <p style="max-width:700px;margin:15px auto">
+
+      A creator space built around creativity,
+      better editing, personal growth,
+      entertainment and fitness.
+
+    </p>
+
+    <a
+      class="btn"
+      href="https://youtube.com/@sanjoeditz001"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      SUBSCRIBE ▶
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="title reveal">
+
+    <h2>Stay Connected</h2>
+
+    <p>
+      Follow Sanjo Editz for new content.
+    </p>
+
+  </div>
+
+
+  <div
+    class="reveal"
+    style="text-align:center"
+  >
+
+    <a
+      class="btn alt"
+      href="https://youtube.com/@sanjoeditz001"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      YouTube
+    </a>
+
+    <a
+      class="btn alt"
+      href="#"
+    >
+      Instagram
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  © 2026 Sanjo Editz •
+  Edit • Improve • Entertain • Repeat.
+
+</footer>
+
+
+<!-- SCROLL JAVASCRIPT -->
+
+<script>
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+const observer =
+  new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold:0.15
+    }
+
+  );
+
+
+revealElements.forEach((element) => {
+
+  observer.observe(element);
+
+});
+
+
+/* Card stagger */
+
+const cards =
+  document.querySelectorAll(".card");
+
+cards.forEach((card,index) => {
+
+  card.style.transitionDelay =
+    `${index * 0.08}s`;
+
+});
+
+</script>
+
+
+</body>
+    </html>
